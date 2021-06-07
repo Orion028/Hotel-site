@@ -1,0 +1,25 @@
+<!--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Reached payment page</h1>
+	<hr><br>
+	Username : <c:out value="${username }"></c:out><br>
+	Roomtier : <c:out value="${roomtier }"></c:out><br>
+	checkin : <c:out value="${checkin }"></c:out><br>
+	checkout : <c:out value="${checkout }"></c:out><br>
+	Adults : <c:out value="${adults }"></c:out><br>
+	kids : <c:out value="${kids }"></c:out><br>
+	Rooms : <c:out value="${noOfRooms }"></c:out><br>
+	<form action="BookingController" method="get">
+		<input type="hidden" name="action" value="openPaymentsPage"> 
+		<input type="submit" value="Pay">
+	</form>
+</body>
+</html>
