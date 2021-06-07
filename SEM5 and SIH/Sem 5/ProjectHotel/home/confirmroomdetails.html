@@ -1,0 +1,90 @@
+<!--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book rooms</title>
+    
+</head>
+<body style="padding: 0px;">
+  <nav class="anav navbar-fixed-top">
+    <img src="sass/logos/g7878.svg" id="logo">
+    <ul  class="header-link">
+      <li>
+        <a id="link1" href="Controller?action=loadhome" class="header-link__home" >home</a>
+      </li>
+      <li>
+        <a  id="link3" href="#" class="header-link__gallery">gallery</a>
+      </li>
+      <li>
+        <a id="link5"  href="#" class="header-link__dining">dining</a>
+      </li>
+      <li>
+        <a  id="link6" href="#" class="header-link__signin">"${username }"</a>
+      </li>
+    </ul>
+  </nav>
+    <main>
+    
+        <section>
+          
+            <div class="mainm">
+             
+                <div class="mainm__left"></div>
+                <div class="mainm__right" id="imgimg"></div>
+            </div>
+           
+        </section>
+        <form action="BookingController" method="post">
+            
+		<input type="hidden" name="action" value="validateRoomsConfirmedByUser">
+        <div class="middle-portion">
+          <div class="selection">
+            <img src="sass/logos/information-button.svg" class="selection__info">
+              <select onchange="myonchange(this.value)" id="dropdown" name="roomtier">
+                  <option value="gold" <c:if test="${key == 1 }">selected</c:if> ><p>Gold (<c:out value="${goldrooms }"></c:out>)</p></option>
+                  <option value="silver" <c:if test="${key == 2 }">selected</c:if> ><p>Silver (<c:out value="${silverrooms}"></c:out>)</p></option>
+                  <option value="platinum" <c:if test="${key == 3 }">selected</c:if> ><p>platinum (<c:out value="${platinumrooms }"></c:out>)</p></option>
+                  <option value="platinum +" <c:if test="${key == 4 }">selected</c:if> ><p>Platinum + (<c:out value="${platinumplusrooms }"></c:out>)</p></option>
+                </select>
+            </div>
+
+            <div class="calender">
+              <img  src="sass/logos/calendar.svg" height="15px" width="20px">
+              <p>IN:</p><input type="date" class="calender__cal cal_1" name="checkin" value="${checkin }">
+              <img src="sass/logos/calendar.svg" height="15px" width="20px">
+              <p>OUT:</p><input type="date" class="calender__cal cal_2" name="checkout" value="${checkout }">
+            </div>
+
+            <div class="checking">
+              <img src="sass/logos/salesman.svg" height="15px" width="20px">
+              <p>adults</p><input class="checking__cal cal_1" type="number" placeholder="3" name="adults" value="${adults }" >
+              <img src="sass/logos/baby.svg" height="15px" width="20px">
+              <p>kids</p><input class="checking__cal cal_2" type="number" class="checking__kids" placeholder="2" name="kids" value="${kids }" >
+             <!--   <a href="#" class="checking__now">Book Now</a> -->
+            </div>
+
+            <div class="rooms">
+              <img src="sass/logos/salesman.svg" height="15px" width="20px">
+              <p class="rooms__heading">Recommended rooms(editable)</p>
+              <input class="rooms__input" type="number" placeholder="3" name="noOfRooms" value="${noOfRooms }" min="1">
+              <input type="submit" class="rooms__now" value="Confirm and Pay">
+            </div>
+
+            <c:out value="${errormsg }"></c:out>
+            <script>
+              function errormesg(value){
+              alert(value);
+              }
+            </script>
+          <script src="javascript/changeimg.js"></script>
+        </div>
+      </form>
+    </main>
+</body>
+</html>

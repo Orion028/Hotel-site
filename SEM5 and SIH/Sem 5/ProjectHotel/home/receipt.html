@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+        <title>Book rooms</title>
+</head>
+<body>
+    <main>
+        <form>
+        <div class="container">
+                <div id="colorr" onload='colorchng("platinum")'></div>
+                <script>
+                        function myFunction() {
+                          document.getElementById("img").style.backgroundColor= "#708090";
+                        }
+                </script>
+            
+                <h2 class="container__left-heading l__para-5">Receipt
+                    <div class="line"></div>
+                </h2>
+
+                <div class="l__para-1">Amount<br>
+                10,000<div class="line"></div></div>
+
+                <div class="l__para-2">check in<br>
+                24/10/2019
+                <c:out value="${checkin }"></c:out><div class="line"></div></div>
+
+                <div class="l__para-3">check out<br>
+                24/11/2019
+                <c:out value="${checkout }"></c:out></div>
+
+                <div class="l__para-4">Tier<br>
+                Gold
+                <c:out value="${roomtier }"></c:out></div>
+            
+                <h1 class="r__para-5">Taj lake palace</h1>
+
+                <div class="r__para-1">hello this this,<c:out value="${username }"></c:out>
+                </div>
+                <div class="r__para-2">Your total Amount is 10,000 INR.<br>
+                2<c:out value="${noOfRooms }"></c:out> Gold <c:out value="${roomtier }"></c:out>rooms are booked for 1 <c:out value="${kids }"></c:out> children and 2 <c:out value="${adults }"></c:out> Adults</div>
+
+                <div class="r__para-3">It will take some time to get confirmation email, Please be patient</div>
+
+                <div class="r__para-4">
+                    <a href="#">Pay</a>
+                </div>
+                <script src="javascript/changecolor.js"></script>
+        </div>
+    </form>
+    </main>
+</body>
+</html>
