@@ -5,3 +5,4 @@
 * People viewing the website will have an exact idea about what this hotel is going to offer. So, this makes it easier for people to just check each and everything about the hotel via the website.
 * The charges and records will be maintained by this website. This website is made in a user friendly interface so everyone can understand and use easily.
 ---
+![Image of Home page](https://github.com/Parthvsquare/Hotel-Site/blob/main/Images/Home.png)
